@@ -1,8 +1,5 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
 
 Booking-api:
-  path: /api
+  path: /get-availability
   controller: App\Controller\BookingController::index
   methods: GET

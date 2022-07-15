@@ -10,4 +10,4 @@ migrate:
 	php bin/console doctrine:migrations:migrate
 
 ss:
-	symfony server:start
+	symfony server:start -d

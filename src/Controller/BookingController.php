@@ -3,8 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Entity\Booking;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Service\BookingService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,36 +11,23 @@ use Symfony\Component\HttpFoundation\Response;
 
 class BookingController extends AbstractController
 {
-    private EntityManagerInterface $entityManager;
+    private BookingService $bookingService;
 
-    public function __construct(EntityManagerInterface $entityManager)
+    public function __construct(BookingService $bookingService)
     {
-        $this->entityManager = $entityManager;
+        $this->bookingService = $bookingService;
     }
 
     public function index(Request $request): Response
     {
-        $bookingRepository = $this->entityManager->getRepository(Booking::class);
-////        $bookingRepository->findAll();
-        $availability = $bookingRepository->createQueryBuilder('b')
-            ->andWhere('b.date_to >= :from')
-            ->andWhere('b.date_from <= :to')
-            ->setParameter('from', '2022-08-05')
-            ->setParameter('to', '2022-08-14')
-            ->getQuery()
-            ->execute();
-//
-            dd($availability);
-
-
+        $availableSpaces = $this->bookingService->getAvailability($request->get('from'), $request->get('to'));
 
         return new JsonResponse(
             [
-                'status' => 'ok',
-                'paymentId' => '1111',
-                'verifoneUrl' => 'hi',
+                'status' => 'success',
+                'availableSpaces' => $availableSpaces,
             ],
-            Response::HTTP_CREATED
+            Response::HTTP_OK
         );
     }
 }

@@ -29,18 +29,18 @@ final class Version20220712063656 extends AbstractMigration
         $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('Mark', '2022-08-03', '2022-08-07')");
         $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('Kevin', '2022-08-12', '2022-08-18')");
         $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('David', '2022-08-17', '2022-08-25')");
-        $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('Tom', '2022-08-06', '2022-08-06')");
+        $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('Tom', '2022-08-06', '2022-08-07')");
         $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('Asem', '2022-08-22', '2022-08-28')");
         $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('George', '2022-08-07', '2022-08-07')");
         $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('James', '2022-08-06', '2022-08-08')");
         $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('Robert', '2022-08-07', '2022-08-09')");
-        $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('James', '2022-08-10', '2022-08-12')");
-        $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('Richard', '2022-08-07', '2022-08-20')");
+        $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('James', '2022-08-10', '2022-08-10')");
+        $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('Richard', '2022-08-07', '2022-08-10')");
         $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('Daniel', '2022-08-03', '2022-08-08')");
         $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('Steven', '2022-08-02', '2022-08-08')");
-        $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('Steven', '2022-08-09', '2022-08-12')");
+        $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('Steven', '2022-08-12', '2022-08-14')");
         $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('Haya', '2022-08-02', '2022-08-04')");
-        $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('Sarah', '2022-08-03', '2022-08-14')");
+        $this->addSql("INSERT INTO `booking` (`customer`, `date_from`, `date_to`) VALUES ('Sarah', '2022-08-03', '2022-08-10')");
     }
 
     public function down(Schema $schema): void
