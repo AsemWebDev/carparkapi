@@ -30,4 +30,18 @@ class BookingController extends AbstractController
             Response::HTTP_OK
         );
     }
+
+    public function book(Request $request): Response
+    {
+        $booking = $this->bookingService->book(
+            $request->get('username'),
+            $request->get('from'),
+            $request->get('to')
+        );
+
+        return new JsonResponse(
+            $booking,
+            Response::HTTP_OK
+        );
+    }
 }

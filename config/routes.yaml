@@ -1,5 +1,9 @@
-
-Booking-api:
+get-availability:
   path: /get-availability
   controller: App\Controller\BookingController::index
   methods: GET
+
+book:
+  path: /book
+  controller: App\Controller\BookingController::book
+  methods: POST
